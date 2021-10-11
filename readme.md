@@ -1,5 +1,7 @@
 # SongBook
+*"Descubre cuántas versiones tiene tu canción favorita"*
 
+---------------
 Aplicación web en Flask
 
 
@@ -30,6 +32,7 @@ flask run
 * [Python](https://www.python.org/) - Programming language
 * [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Web develoment
 * [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Web template engine
+* [API Shazam](https://rapidapi.com/blog/shazam-api-java-python-php-ruby-javascript-examples/) - API Music
 * [Skeleton CSS](http://getskeleton.com/) - MiniFramework CSS
 
 ## Desarrollador ⌨️
