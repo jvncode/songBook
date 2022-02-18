@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} SongBook | Home {% endblock %}
+{% block content %}
+    <form method="post">
+        {% if message != "" %}
+            <h5 style="color: darkred; margin-left: 25%; margin-top: 25%; position:absolute"><strong>{{ message }}</strong></h5>
+        {% endif %}
+        <div class="six columns" style="margin-left: 25%; margin-top: 10%;">
+            <label for="SongSearch">Introduce aquí esa canción que estás pensando</label>
+            <input class="u-full-width" type="text" name="letter" placeholder="Búsqueda...">
+            <center><button type="submit" class="button-primary" name="BtnHome" value="Go">Buscar Registros</button></center>
+        </div>
+    </form>
+{% endblock %}
