@@ -14,7 +14,7 @@ def home():
         message = ""
         if search == "":
             message = "Introduce alguna canción para poder ayudarte..."
-            return render_template('home.html',message=message)
+            return render_template('home.html', message=message)
         return redirect(url_for('results', search=search))
 
 
@@ -28,19 +28,20 @@ def results():
         dictShazam = {}
         for ix in range(len(dataShazam['tracks']['hits'])):
             dictShazam[ix] = {'id': ix,
-                          'song': dataShazam['tracks']['hits'][ix]['track']['title'],
-                          'artist': dataShazam['tracks']['hits'][ix]['track']['subtitle'],
-                          'image': dataShazam['tracks']['hits'][ix]['track']['share']['image'],
-                          'video': dataShazam['tracks']['hits'][ix]['track']['share']['href']
-                        }
+                              'song': dataShazam['tracks']['hits'][ix]['track']['title'],
+                              'artist': dataShazam['tracks']['hits'][ix]['track']['subtitle'],
+                              'image': dataShazam['tracks']['hits'][ix]['track']['share']['image'],
+                              'video': dataShazam['tracks']['hits'][ix]['track']['share']['href']
+                              }
             numHits = len(dictShazam)
         return render_template('resultSongs.html',
                                dataShazam=dictShazam,
                                numHits=numHits,
-                               #dataMusix=dataMusix,
-                               #dataLAST=dataLAST
+                               # dataMusix=dataMusix,
+                               # dataLAST=dataLAST
                                )
     if request.method == "POST":
         return redirect(url_for('home'))
+
 
 app.run(debug=True)

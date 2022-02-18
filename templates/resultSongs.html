@@ -1,30 +1,30 @@
-{% extends "base.html" %}
+{% extends "base.html" % }
 
-{% block title %} SongBook | Registros {% endblock %}
+{% block title % } SongBook | Registros { % endblock % }
 
-{% block content %}
-<hr>
-    <table class="u-full-width" style="width: 80%;" align="center">
-        <thead>
-            <tr>
-                <th>Canción</th>
-                <th>Artista</th>
-                <th>Album</th>
-                <th>Video-Clip</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for ix in range(numHits) %}
-            <tr>
-                <td>{{ dataShazam[ix]['song'] }}</td>
-                <td>{{ dataShazam[ix]['artist'] }}</td>
-                <td><img src="{{ dataShazam[ix]['image'] }}" alt="{{ dataShazam['song'] }}" width="80" height="80"></td>
-                <td><a href="{{ dataShazam[ix]['video'] }}" target="_blank"><i class="gg-play-button-r" style="margin-left: 12%;"></i></a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <form method="POST">
-        <center><button type="submit" class="button-primary" name="BtnResults" value="Back">Volver a Inicio</button></center>
-    </form>
-{% endblock %}
+{% block content % }
+<hr >
+    <table class = "u-full-width" style = "width: 80%;" align = "center" >
+       <thead >
+           <tr >
+                <th > Canción < /th >
+                <th > Artista < /th >
+                <th > Album < /th >
+                <th > Video-Clip < /th >
+            </tr >
+        </thead >
+        <tbody >
+            { % for ix in range(numHits) % }
+            <tr >
+                <td > {{ dataShazam[ix]['song'] }}</td>
+                <td > {{ dataShazam[ix]['artist'] }}</td>
+                <td > <img src="{{ dataShazam[ix]['image'] }}" alt="{{ dataShazam['song'] }}" width="80" height="80"></td>
+                <td > <a href="{{ dataShazam[ix]['video'] }}" target="_blank"><i class="gg-play-button-r" style="margin-left: 12%;"></i></a></td>
+            </tr >
+            { % endfor % }
+        </tbody >
+    </table >
+    <form method = "POST">
+        <center > <button type="submit" class="button-primary" name="BtnResults" value="Back">Volver a Inicio</button></center>
+    </form >
+{ % endblock % }
